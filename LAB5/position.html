@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position 속성 테스트</title>
+    <style>
+        span, div{
+            background-color: chartreuse;
+            border: 1px solid blue;
+        }
+
+        .one {
+            position: fixed;
+            top: 5px;
+        }
+        .two {
+            position: relative;
+            right: 5px;
+        }
+        .three {
+            position: relative;
+            bottom: 5px;
+        }
+        .box{
+            width:100px;
+            height:100px;
+            position:absolute;
+        }
+        .box:nth-child(1){
+            background-color: red;
+            left: 10px; top:10px;
+        }
+        .box:nth-child(2){
+            background-color: green;
+            left: 50px; top:50px;
+        }
+        .box:nth-child(3){
+            background-color: blue;
+            left: 90px; top:90px;
+        }
+        .out_box{
+            width: 400px; height: 100px;
+            border: 3px solid black;
+            position: relative;
+            overflow-y: scroll;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>제목1 입니다.</h1>
+    <span>내용1</span>
+    <span>내용2</span>
+    <span>내용3</span>
+    <div> 
+        <div>블럭1</div>
+        <div>블럭2</div>
+        <div>블럭3</div>
+    </div>
+    <h1>마지막입니다.</h1>
+
+    <h1>제목1 입니다.</h1>
+    <span class="one">내용1</span>
+    <span class="two">내용2</span>
+    <span class="three">내용3</span>
+    <div class="out_box"> 
+        <div class="box">블럭1</div>
+        <div class="box">블럭2</div>
+        <div class="box">블럭3</div>
+    </div>
+    <h1>마지막입니다.</h1>
+
+</body>
+</html>
