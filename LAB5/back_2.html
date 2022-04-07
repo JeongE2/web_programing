@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경속성 예제_활용</title>
+    <style>
+        body{
+            background-image: url("image/BackgroundFront.png"), url("./image/BackgroundBack.png");
+            background-size: 100% 250px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 0px 100px;
+        }
+
+        p{
+            font-size: 32px;
+            color:brown;
+        }
+
+        .font_big{font-size:48px;}
+        .font_small{font-size:16px;}
+        
+        .font_arial {font-family: Arial;}
+        .font_roman {font-family: 'Times New Roman';}
+
+        .font_italic {font-family: italic;}
+        .font_bold {font-weight: bold;}
+        .font_blue {color:blue;}
+        .font_center{text-align: center;}
+        .btn {
+            width: 150px;
+            height: 100px;
+            background-color: orange;
+            border: 10px solid white;
+            border-radius: 5px;
+            box-shadow: 5px 5px 5px grey;
+        }
+
+        .btn > a {
+             display: block;
+             line-height: 100px;
+             text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<p class="font_big font_arial">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean faucibus dolor non quam elementum ultrices. Phasellus vel tellus lacus. Vestibulum a convallis quam. Donec ut erat nec est maximus facilisis sed
+     ut justo. Vivamus vulputate hendrerit ullamcorper. Curabitur consectetur vel turpis eu commodo. Sed vel facilisis quam.
+</p>
+
+<p class="font_small font_roman">
+    Morbi quis pretium lorem, vitae faucibus velit. Maecenas augue nisi, fermentum finibus tortor ut, rutrum rutrum augue. Suspendisse eget ultricies erat. Nunc convallis imperdiet dui, ac lacinia libero. Mauris 
+    ut urna ac diam imperdiet vestibulum id in libero. In hac habitasse platea dictumst. Phasellus commodo, nunc id finibus condimentum, nibh diam commodo elit, vel blandit enim augue vestibulum lacus. In eget 
+    viverra sem. Nullam viverra metus id lorem vulputate, viverra eleifend eros semper. Nunc eu pharetra sapien, in viverra lorem. Nulla pharetra condimentum diam quis efficitur. Nam mollis sagittis mi, commodo 
+    pharetra neque ultrices eu.
+</p>
+
+<p class = "font_italic font_bold font_blue">
+    Nulla bibendum venenatis quam ut feugiat. Vivamus at dictum lacus. Sed iaculis eros vel velit vulputate malesuada. Mauris id mauris at tellus vestibulum condimentum vitae quis ligula. Curabitur vel viverra ex, 
+    ac congue leo. Suspendisse sit amet vehicula turpis, sed interdum dolor. Donec mollis pharetra sapien, vel aliquam ex ullamcorper quis. Morbi eget neque ac tortor tincidunt cursus sed a augue. Proin aliquam 
+    velit eu mauris elementum pretium. Sed id augue enim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam sodales odio ipsum, ac aliquet massa porttitor quis.
+</p>
+
+<h1 class="font_blue font_center">글자 속성 테스트</h1>
+
+<div class = "btn">
+    <a href="#" class="font_big font_center">Click</a>
+</div>
+<body>
+    
+</body>
+</html>
