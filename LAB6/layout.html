@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 테스트</title>
+    <style>
+        div.item {
+            border: 1px solid black;
+            float:left;
+            margin : 0 5px;
+        }
+        p{
+            margin-top: 10px;
+        }
+        body{
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .box{
+            width: 200px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -100px;
+        }   
+        .top_bar{
+            background-color: aquamarine;
+            position:fixed;
+            left:20%;
+            right:20%;
+            top: 0;
+            height: 50px;
+        }
+        .right_bar{
+            background-color: forestgreen;
+            position:fixed;
+            right:0;
+            top: 50px;
+            bottom:10%;
+            width:50px;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu. A cras semper auctor neque vitae tempus quam. Vitae aliquet nec ullamcorper sit amet risus. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Donec ac odio tempor orci. Tristique risus nec feugiat in fermentum posuere urna. Semper eget duis at tellus at urna condimentum mattis pellentesque. Lorem dolor sed viverra ipsum nunc aliquet. Amet consectetur adipiscing elit ut.</p>
+    <div style="overflow: hidden;">
+        <div class="item">메뉴 1</div>
+        <div class="item">메뉴 2</div>
+        <div class="item">메뉴 3</div>
+        <div class="item">메뉴 4</div>
+    </div>
+    <p style="clear:both">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu. A cras semper auctor neque vitae tempus quam. Vitae aliquet nec ullamcorper sit amet risus. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Donec ac odio tempor orci. Tristique risus nec feugiat in fermentum posuere urna. Semper eget duis at tellus at urna condimentum mattis pellentesque. Lorem dolor sed viverra ipsum nunc aliquet. Amet consectetur adipiscing elit ut.</p>
+    <p style="clear:both">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu. A cras semper auctor neque vitae tempus quam. Vitae aliquet nec ullamcorper sit amet risus. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Donec ac odio tempor orci. Tristique risus nec feugiat in fermentum posuere urna. Semper eget duis at tellus at urna condimentum mattis pellentesque. Lorem dolor sed viverra ipsum nunc aliquet. Amet consectetur adipiscing elit ut.</p>
+    <p style="clear:both">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu. A cras semper auctor neque vitae tempus quam. Vitae aliquet nec ullamcorper sit amet risus. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Donec ac odio tempor orci. Tristique risus nec feugiat in fermentum posuere urna. Semper eget duis at tellus at urna condimentum mattis pellentesque. Lorem dolor sed viverra ipsum nunc aliquet. Amet consectetur adipiscing elit ut.</p>
+    
+    <div class = "box"> 중앙에 배치하고 싶다!! </div>
+    <div class="top_bar">메뉴가 생길 곳</div>
+    <div class="right_bar">오른쪽 메뉴</div>
+
+</body>
+</html>
