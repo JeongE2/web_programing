@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tbody>
+                <tr>
+                    <th> <label for="id">아이디</label> </th>
+                    <td><input id="id" type="text"></td>
+                </tr>
+                <tr>
+                    <th><label for="pw">비밀번호</label></th>
+                    <td><input id="pw" type="password" name="pw"></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><input type="submit"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <hr>
+
+    <form>
+        <b>시작 그룹</b><br>
+        <input id="r1" type="radio" name="시작 그룹" checked><label for="r1">새 탭 페이지 열기</label> <br />
+        <input id="r2" type="radio" name="시작 그룹"><label for="r2">중단한 위치에서 계속하기</label><br />
+        <input id="r3" type="radio" name="시작 그룹"><label for="r3">특정 페이지 또는 페이지 모음 열기</label><br />
+        <br>
+        <b>개인정보 및 보안</b><br>
+        <input type="checkbox" name="개인정보 및 보안" checked>동기화 및 서비스<br>
+        <input type="checkbox" name="개인정보 및 보안" checked>로그인 허용<br>
+        <input type="checkbox" name="개인정보 및 보안">페이지 미리 로드<br>
+    </form>
+    <hr>
+
+    <h1>글 작성하기</h1>
+    <form>
+        <table>
+            <tbody>
+                <tr>
+                    <th>작성자</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>아이디</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td><input type="text">@<input type="text"></td>
+                </tr>
+                <tr>
+                    <th>휴대폰</th>
+                    <td><select>
+                        <option>010</option>
+                        <option>053</option>
+                        <option>054</option>
+                        <option>051</option>
+                        <option>070</option>
+                    </select>-<input type="text">-<input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <th>글제목</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td><textarea rows="10" cols="50"></textarea></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><input type="submit" width="100px" height="50px"></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </form>
+
+</body>
+
+</html>
