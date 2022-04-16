@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1:hover { color: red;}
+        h1:active {color:blue;}
+        /**/
+        input:enabled{ background-color: white;}
+        input:disabled{ background-color: gray;}
+        input:focus{background-color: orange;}
+
+        ul{overflow: hidden;}
+        ul > li{
+            list-style: none;
+            float: left; padding: 15px;
+        }
+        ul>li:first-child { border-radius: 10px 0 0 10px;}
+        ul>li:last-child { border-radius: 0 10px 10px 0;}
+
+        ul>li:nth-child(2n){background-color: #FF0003;}
+        ul>li:nth-child(2n+1){background-color: #800000;}
+
+        ol > li > a:first-child{color:red;}
+    </style>
+</head>
+<body>
+    <h1>반응 선택자</h1>
+    <!----> /**/ //
+    <h2>사용가능</h2>
+    <input>
+    <h2>사용 불가능</h2>
+    <input disabled="disabled">
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+
+    </ul>
+
+    <ol>
+        <li><a href="#">주의사항</a></li>
+        <li><a href="#">주의사항</a></li>
+        <li><a href="#">주의사항</a></li>
+        <li><a href="#">주의사항</a></li>
+        <li><a href="#">주의사항</a></li>
+    </ol>
+</body>
+</html>

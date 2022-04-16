@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식 테스트</title>
+    <style>
+        th{
+            text-align: left;
+            background: pink;
+        }
+        td{
+            text-align: center;
+            background: plum;
+        }
+        div{
+            width: 150px;
+            height: 150px;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>회원가입</legend>
+        
+        <table>
+            <tr>
+                <th>이름</th>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td>
+                    <select name="year">
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                    </select>
+                    <select name="month">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <select name="day">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td><input type="radio" name="gender" value="m">남
+                    <input type="radio" name="gender" value="w">여</td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="확인"></td>
+            </tr>
+        </table>
+    </fieldset>
+        <input type="hidden" name="sec" value="1234">
+    </form>
+    
+    <div>공간분할 1</div>
+    <div>공간분할 2</div>
+    <div>공간분할 3</div>
+    <div>공간분할 4</div>
+    <span>공간분할 5</span>
+    <span>공간분할 6</span>
+    <span>공간분할 7</span>
+    <span>공간분할 8</span>
+</body>
+</html>
