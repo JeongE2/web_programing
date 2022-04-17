@@ -1,0 +1,12 @@
+body{
+    width:auto;
+    background-color: chartreuse;
+}
+#menu{
+    width:auto;
+    float:none;
+}
+#section{
+    width:auto;
+    float:none;
+}
