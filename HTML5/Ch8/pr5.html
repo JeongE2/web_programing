@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin:0px; padding:10px;}
+        body{
+            width : auto;
+            margin : 0 auto;
+            overflow: hidden;
+            text-align: center;
+        }
+        li { list-style-type: none;}
+        #m_list {
+            display: none;
+        }
+        div {
+            border: 1px black solid;
+        }
+        .m_view {
+            height: 22em;
+        }
+        .m_view li {
+            background-color: gray;
+            border-radius: 10px;
+        }
+        .text_in {
+            height: 4em;
+        }
+        .menu ul li {
+            font-size: 10px;
+            float: left;
+            padding: 0 5px;
+            border: 1px red solid;
+        }
+
+        @media (orientation: landscape) {
+            #m_list { 
+                width: 150px;
+                height: 330px;
+                display: inherit;
+                float: left;    
+            }
+            #message {
+                width: 400px;
+                height: auto;
+                float: right;
+            }
+            .time_net_bat {
+                display: none;
+            }
+            .m_view {
+            height: 8em;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div id="message">
+        <div class="time_net_bat">시간 네트워크 배터리</div>
+        <div class="profile">1655-0422</div>
+        <div class="m_view">
+            <ul>
+                <li>요금 결제 안내</li>
+            </ul>
+        </div>
+        <div class="text_in">
+            <form>
+                <input type="text">
+            </form>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>사진</li>
+                <li>프린터</li>
+                <li>인터넷</li>
+                <li>인스타</li>
+                <li>유튜브</li>
+            </ul>
+        </div>
+    </div>
+    <div id="m_list">
+        <ul>
+            <li>요금 결제 안내</li>
+            <li>인증 번호</li>
+            <li>가스 요금 안내</li>
+            <li>대출 상품 가입</li>
+            <li>추천 주식</li>
+        </ul>
+    </div>
+</body>
+</html>
