@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 실습</title>
+    <script>
+        const fn1 = function(val){
+            return val * 2;
+        }
+
+        function fn2(val){
+            return val*3;
+        }
+
+        let v = fn1(3);
+        console.log(v);
+        console.log(fn2(v));
+
+        const testArray = [1,2,3,-3,4,-5];
+        console.log(min(testArray))
+
+        function min(arr){ //선언적 함수
+            let min = arr[0];
+            for(const v of arr){
+                if(v<min){
+                    min = v;
+                }
+            }
+            return min;
+        }
+
+        const max = function(arr){ // --> 안괜찮 앞으로 이동
+            let max = arr[0];
+            for(const v of arr){
+                if(v>max){
+                    max = v;
+                }
+            }
+            return max;
+        }
+
+        console.log (max(testArray)); //익명함수에서 선언 전에 호출 괜찮?
+
+        function fn3(...items){
+            console.log(items)
+            for(const v of items){
+                console.log(v*10)
+            }
+        }
+        fn3(1,2,3,4,5);
+        fn3(testArray);
+        fn3(...testArray);
+
+        function applyfn( arr, func){
+            console.log(func(arr))
+        }
+        applyfn( testArray,max)
+        applyfn( testArray,min)
+
+        applyfn( testArray, function(arr){
+            let sum = 0;
+            for(v of arr){
+                sum += v;
+            }
+            return sum;
+        })
+
+        applyfn(testArray, arr=>{
+            let sum = 0;
+            for(v of arr){
+                sum += v;
+            }
+            return sum;
+        })
+
+        applyfn(testArray, function(arr){
+            return arr[0];
+        })
+        applyfn(testArray, arr=>arr[0]);
+
+
+        testArray.forEach(( value,index,array)=>console.log(value*2) )
+        
+        let newArray = testArray.map((value)=>value*10)
+        console.log(newArray)
+
+        let newArray2 = testArray.filter((value)=>value>0)
+        console.log(newArray)
+
+
+        let count=0;
+        let timer_id = setInterval(() => {
+            console.log(`${count}번째 실행`)
+        count++;
+        }, 1*1000)
+
+        setTimeout(()=>{
+            clearInterval(timer_id)
+            console.log('종료')
+        }, 2*1000)
+    </script>
+
+    <script>
+        'use strict' //let 없으면 에러
+        let data = 10004;
+        console.log(data)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

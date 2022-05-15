@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <script>
+        var xhr = new XMLHttpRequest();
+        var url = 'http://apis.data.go.kr/1471000/FoodNtrIrdntInfoService1/getFoodNtrItdntList1'; /*URL*/
+        var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + 'H0jsiyFbcZgb4iYSKj1%2BCCdhFFNn9fTT083YmLYHc9OzYei6xxqs5f%2F9b87QeZ%2B0QEXnu2A7ztqBPR5ir7yYGw%3D%3D'; /*Service Key*/
+        queryParams += '&' + encodeURIComponent('desc_kor') + '=' + encodeURIComponent('바나나칩'); /**/
+        //queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+        //queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('3'); /**/
+        //queryParams += '&' + encodeURIComponent('bgn_year') + '=' + encodeURIComponent('2017'); /**/
+        //queryParams += '&' + encodeURIComponent('animal_plant') + '=' + encodeURIComponent('(유)돌코리아'); /**/
+        queryParams += '&' + encodeURIComponent('type') + '=' + encodeURIComponent('xml'); /**/
+        xhr.open('GET', url + queryParams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                alert('Status: ' + this.status + 'nHeaders: ' + JSON.stringify(this.getAllResponseHeaders()) + 'nBody: ' + this.responseText);
+            }
+        };
+
+        xhr.send('');
+        xhr.onload = () => console.log(xhr.responseText)
+    </script>
+</body>
+
+</html>
