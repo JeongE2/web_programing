@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 실습</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+        const arr = ['하나','둘','셋']
+        console.log(arr[0])
+        arr.name = "첫번째배열";
+        console.log(arr.name)
+
+        const product = {
+            제품명:"망고아이스크림",
+            가격:2000,
+            "성 분":"우유",
+            print() {
+                //'use strict' 가격을 선언하지 않고 로컬 변수로 사용, 에러 발생
+                console.log(this.제품명 + this.가격 + this['성 분'])
+                this.가격 = 3000 //가격 = 3000
+            },
+            a() {
+                console.log(this)
+            },
+            b: ()=> {
+                console.log(this) //윈도우 속성을 출력하게 된다.
+            }
+        }
+
+        console.log(product['제품명'])
+        console.log(product.제품명)
+
+        product.print()
+
+        const data = [
+            {
+             name:'컴퓨터공학과',
+             price:2000,
+            },
+            {
+                name:'컴공',
+                price:2500,
+            },
+            {
+                name:'영남대',
+                price:1500,
+            }
+        ]
+        const json_data = JSON.stringify(data, null, 2)
+        console.log(json_data)
+
+        const parse_data = JSON.parse(json_data)
+        console.log(parse_data)
+
+        const output = _.sortBy(data, (d)=>d.name)
+        console.log(output)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
