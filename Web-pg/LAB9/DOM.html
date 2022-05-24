@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script>
+        const h1 = (text) => `<h1>${text}<h1>`
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.innerHTML += h1('1번째')
+
+            const header = document.querySelector('h1');
+
+            header.textContent = '영남대학교 컴공'
+            header.style.color = 'blue';
+            header.style.backgroundColor = 'red';
+            header.style.padding = '10px';
+
+            const headers = document.querySelectorAll('h1')
+
+            ///*
+            headers.forEach( (header, index) => {
+                header.textContent = `영남대학교 컴공 ${index + 1}`
+                header.style.color = 'blue';
+                header.style.backgroundColor = 'red';
+                header.style.padding = '10px';
+            })//*/
+
+            const ha = document.querySelectorAll(".haha")
+            ha.forEach( (header, index) => {
+                header.textContent = `Hello`
+            })
+
+            const rects = document.querySelectorAll(".rect")
+            rects.forEach( (rect, index) => {
+                const width = (index+1)*100
+                const src = `http://placekitten.com/${width}/250`
+                rect.setAttribute('src',src);
+            })
+
+            const divA = document.querySelector('#first')
+            const divB = document.querySelector('#second')
+            
+            const _h1 = document.createElement('h1')
+            _h1.textContent = "새롭게 만들어진 h1"
+
+            const toFirst = () => {
+                divA.appendChild(_h1)
+                setTimeout(toSecond, 1000)
+            }
+            const toSecond = () =>{
+                divB.appendChild(_h1)
+                setTimeout(toFirst, 1000)
+            }
+            toFirst()
+
+            let counter = 0
+            _h1.addEventListener('click',(event)=>{
+                counter++
+                _h1.textContent = `새롭게 만들어진 h1 : ${counter}`
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <script>
+        document.body.innerHTML += h1('2번째 Script 태그')
+    </script>
+    <h1 class="haha"> hahah</h1>
+    <script>
+        document.body.innerHTML += h1('3번째 Script 태그')
+    </script>
+    <h1 class="haha">lolololo</h1>
+
+    <img class="rect">
+    <img class="rect">
+    <img class="rect">
+    <img class="rect">
+    <div id="first">
+        <h2>첫번째 div 태그 내부</h2>
+    </div>
+    <hr>
+    <div id="second">
+        <h2>두번째 div 태그 내부</h2>
+    </div>
+</body>
+
+</html>
