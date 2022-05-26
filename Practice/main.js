@@ -1,9 +1,11 @@
 var db = require('./db.js');
 var http = require('http');
+var sql = 'SELECT * FROM food WHERE num = 2'
 
 var app = http.createServer(function (request, response) {
-    db.query('SELECT * FROM test', function (error, result) {
+    db.query(sql, function (error, result) {
         console.log(result);
+        ///*
         var html =
         `
         <!DOCTYPE html>
@@ -13,11 +15,10 @@ var app = http.createServer(function (request, response) {
                     <meta charset="utf-8"
         </head>
         <body>
-        <p>${result[0].name} / ${result[0].age} / ${result[0].birthday} </p>
-        <p>${result[1].name} / ${result[1].age} / ${result[1].birthday} </p>
+        <p>${result[0].name}  </p>
         </body>
         </html>
-        `
+        `//*/
 
         response.writeHead(200);
         response.end(html);

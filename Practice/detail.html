@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        var tools = require('./selectbynum.js');
+        tools.selectByNum(1);
+    </script>
+</head>
+<body>
+    <div>
+        <div><h2>식품영양성분표</h2></div>
+        <div>
+            <table>
+                <colgroup>
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+                <col style="width: 25%;">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>1회제공량</td>
+                    <script>
+                        document.write(tools.selectByNum());
+                    </script>>
+                    <td>열량량얄리얄리얄랴셩셩</td>
+                    <td>${result[0].kcal}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
