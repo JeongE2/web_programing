@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>로그인 페이지</title>
+    <title>회원가입 페이지</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbar-fixed/">
 
@@ -43,7 +43,33 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
+        
       }
+
+      @media (min-width: 1200px){
+       
+       #userCellphone{
+         width:260px;
+       }
+       
+     }
+
+      @media (min-width: 1400px){
+        #userName, #userGender{
+          width:213px;}
+
+        #userBirth_month{
+          width:140px;
+
+        }
+
+        #userCellphone{
+          width:310px;
+        }
+        
+      }
+
+      
 
       .b-example-divider {
         height: 3rem;
@@ -99,6 +125,7 @@
   </head>
   <body style="min-height: 75rem; padding-top: 3.5rem;">
     
+
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
 
 
@@ -158,41 +185,140 @@
       </div>
     </nav>
 
-<br><br><br><br><br><br><br>
+<br>
 
 
 
 <main class="container text-center form-signin w-100 m-auto">
   <form class="hc col-lg-4">
   
-    <!-- 
-    <img class="mb-4" src="/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-    -->
-    
+ 
 
     <div class="mb-3">
-      <input type="text" class="form-control" id="floatingInput" placeholder="아이디" name="userID" >
+
+      <small style="float:left;">아이디</small><br>
+
+      <input type="text" class="form-control" id="userID" name="userID" >
     </div>
     
     <div class="mb-3">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="비밀번호" name="userPassword" >
+      <small style="float:left;">비밀번호</small><br>
+      <input type="password" class="form-control" id="userPassword"  name="userPassword" >
+    </div>
+
+    <div class="mb-3">
+      <small style="float:left;">비밀번호 재확인</small><br>
+      <input type="password" class="form-control" id="userPassword_confirm"  name="userPassword_confirm" >
     </div>
     
-<!--
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
--->
-     
-     
-     
-    <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+    <table>
+      <tr>
+        <td>
+          <div class="mb-3" >
+            <small style="float:left;">이름</small><br>
+            <input type="text" class="form-control" id="userName" name="userName"  >
+          </div>
+        </td>
 
+        
+
+        <td>
+          <div class="mb-3" >
+            <small style="float:left;">성별</small><br>
+            <select class="form-select" id="userGender" aria-label="Default select example" >
+              <option selected>성별을 선택하세요</option>
+              <option value="1">남</option>
+              <option value="2">여</option>
+            </select>
+            
+          </div>
+        </td>
+      </tr>
+    </table>
+    
+
+    
+    
+    <table>
+      <tr>
+        <td>
+          <div class="mb-3" >
+            <small style="float:left;">생년월일</small><br>
+            <input type="text" class="form-control" placeholder="년" id="userBirth_year" name="userBirth_year" >
+          </div>
+          
+        </td>
+        <td>
+          <div class="mb-3" >
+            <br>
+            <select class="form-select" aria-label="Default select example" id="userBirth_month" >
+              <option selected>월</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+          
+        </td>
+        <td>
+          <div class="mb-3" >
+            <br>
+            <input type="text" class="form-control" placeholder="일" id="userBirth_day" name="userBirth_day" >
+          </div>
+          
+        </td>
+      </tr>
+    </table>
+    
+    
+    <div class="mb-3">
+      <small style="float:left;">이메일</small><br>
+      <input type="text" class="form-control" id="userEmail" name="userEmail">
+    </div>
+    
+    <table>
+      <tr>
+        <td>
+          <div class="mb-3" >
+                <small style="float:left;">휴대전화</small><br>
+                <input type="text" class="form-control" id="userCellphone" name="userCellphone">
+          </div>
+        </td>
+        
+        <td>
+          <div class="mb-3">
+            <br>
+            <a class="btn btn-secondary" href="#"><small>인증번호 받기</small> </a>
+      </div>
+        </td>
+      </tr>
+    </table>
+    
+    
+    <div class="mb-3">
+      <small style="float:left;">휴대전화 인증번호</small><br>
+      <input type="text" class="form-control" id="verification" name="verification">
+    </div>
+    
+    
+
+     
+     <br>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">회원 가입</button>
+    
     <p class="mt-5 mb-3 text-muted">&copy; 좋은 음식, 좋은 약</p>
   </form>
 </main>
+
 
 
     <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
