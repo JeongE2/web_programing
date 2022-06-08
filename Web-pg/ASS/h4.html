@@ -20,28 +20,29 @@
     <p> Forth Body </p>
     <h2> Fifth Title </h2>
     <p> Fifth Body </p>
-    <form  onsubmit ="">
+    <form >
         <b>CMD</b>
-        <select class="" name="modordel">
+        <select id="mySelect" name="modordel" onchange="changeMode()">
             <option value="mod">Modify</option>
             <option value="del">Delete</option>
         </select>
-        <select class="" name="cbgt">
+        <select name="cbgt">
             <option value="color">Color</option>
             <option value="bcolor">BG Color</option>
             <option value="text">Text</option>
         </select>
-        to
-        <input type='text' />
+        <span>to
+        <input type='text'/></span>
         where
-        <select class="" name="where">
-            <option value="0">First</option>
-            <option value="4">Last</option>
-            <option value="1">Even </option>
-            <option value="2">Odd </option>
-            <option value="3">All</option>
+        <select name="where">
+            <option value="first">First</option>
+            <option value="last">Last</option>
+            <option value="even">Even </option>
+            <option value="odd">Odd </option>
+            <option value="all">All</option>
+            <option value="second">Second</option>
         </select>
-        <select class="" name="where_in">
+        <select name="where_in">
             <option value="h2">Title</option>
             <option value="p">Body</option>
         </select>
