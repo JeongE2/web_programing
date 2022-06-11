@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5장 함수 실습</title>
+</head>
+<body>
+    <script>
+    //익명 함수
+    const f1 = function(){
+        console.log("익명 함수")
+    }
+
+    //선언적 함수
+    function f2(x) {
+        return x+x
+    }
+   
+    function isLeapYear(x=new Date().getFullYear()){ //윤년 판단 함수
+        return (x%4===0)&&(x%100!==0)||(x%400===0)
+    }
+
+    function sumAll(A,B){ //범위 더하기
+        let sum = 0
+        for (;A<=B;A++){
+            sum += A
+        }
+        return sum
+    }
+    function multipleAll(A,B){ //범위 곱하기
+        let sum = 1
+        for (;A<=B;A++){
+            sum *= A
+        }
+        return sum
+    }
+
+    function minimum(...items){ //최소값
+        let output = items[0]
+        for (const i of items){
+            if(output > i)
+                output = i
+        }
+        return output
+    }
+
+    //나머지 매개변수
+    function sample(...items){
+        console.log(items)
+    }
+    //일반 매개변수와 조합 가능
+    
+    function min(first,...rests){ //매개변수 자료형에 따라 다르게 동작
+        let output
+        let items
+
+        if(Array.isArray(first)){
+            output = first[0]
+            items = first
+        }
+        else{
+            output = first
+            items = rests
+        }
+    }
+
+    //전개 연산자
+    const array1 = [1,2,3,4]
+    sample(array)
+    sample(...array)
+
+    //기본 매개변수
+    function sample2(a = 0,b){} //이렇게 하면 안되고 오른쪽부터 채워야함
+</script>
+    
+</body>
+</html>
