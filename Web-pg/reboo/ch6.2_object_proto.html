@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Number.prototype.power = function (n = 2) {
+            return this.valueof() ** n
+        }
+
+        const a = 12
+        console.log('a.power():', a.power())
+        a.power(3)
+        a.power(4)
+    </script>
+    <script>
+        String.prototype.contain = function (data) {
+            return this.indexOf(data) >= 0
+        }
+        Array.prototype.contain = function (data) {
+            return this.indexOf(data) >= 0
+        }
+
+
+        const b = '안녕하세요'
+        console.log('안녕 in 안녕하세요 : ', a.contain('안녕'))
+
+        const c = [273, 23, 643, 45, 321, 324]
+        console.log('안녕 in 안녕하세요 : ', a.contain('안녕'))
+        c.contain(273)
+
+    </script>
+    <script>
+        const data1 = [{
+            name: '혼자 공부하는 파이썬',
+            price: 18000,
+            publisher: '한빛'
+        }, {
+            name: 'HTML5',
+            price: 26000,
+            publisher: '한빛'
+        }]
+
+        const json = JSON.stringify(data1)
+        console.log(json)
+        console.log(JSON.parse(json))
+    </script>
+    <script>
+        const num = Math.random()
+
+        console.log('#랜덤한 숫자', num)
+
+        console.log(num * 10) // -> 0~10
+        console.log(num * 50) // -> 0~50
+
+        console.log(num * 10 - 5) // -> -5~5
+        console.log(num * 50) // -> -25~25
+
+        //정수
+        console.log(Math.floor(num * 10)) // -> 0~10
+        console.log(Math.floor(num * 50 - 25)) // -> 0~10
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+        const books = [{
+            name: '혼자 공부하는 파이썬',
+            price: 18000,
+            publisher: '한빛미디어'
+        }, {
+            name: 'HTML5 웹 프로그래밍 입문',
+            price: 26000,
+            publisher: '한빛아카데미'
+        }, {
+            name: '머신러닝 딥러닝 실전 개발 입문',
+            price: 30000,
+            publisher: '위키북스'
+        }, {
+            name: '딥러닝을 위한 수학',
+            price: 25000,
+            publisher: '위키북스'
+        }]
+
+        const output = _.sortBy(books, (book) => book.price)
+        console.log(JSON.stringify(output, null, 2))
+
+        const output2 = _.orderBy()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const pet = {
+            name : "구름",
+            eat: function (food){//: function 생략 가능
+                alert(this.name + '은/는'+food+'을/를 먹습니다.')
+            }
+        }
+        pet.eat('밥')
+    </script>
+    <script>
+        const student = {}
+        student.이름 = '김유정'
+        student.취미 = '악기'
+        student.장래희망 = '개발자'
+
+        console.log(JSON.stringify(student,null,2))
+
+        delete student.이름
+
+        console.log(JSON.stringify(student,null,2))
+    </script>
+    <script>
+        const test = {
+            a (){
+                console.log(this)
+            },
+            b: () => { 
+                console.log(this)
+            }
+        }
+        test.a()
+        test.b() //화살표 함수로 선언할때 this를 다루는 방식이 달라짐
+    </script>
+</body>
+</html>
