@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 변수를 선언합니다.
+        let numbers = [273, 25, 75, 52, 103, 32, 57, 24, 76]
+        // 처리합니다.
+        numbers = numbers
+            .filter((value) => value % 2 === 1)
+            .filter((value) => value <= 100)
+            .filter((value) => value % 5 === 0)
+        // 출력합니다.
+        console.log(numbers)
+    </script>
+
+
+    <script>
+        const array = ['사과', '배', '귤', '바나나']
+
+        console.log('# for in 반복문')
+        array.forEach((value, index) => {
+            console.log(index)
+        })
+
+        console.log('# for of 반복문')
+        array.forEach((value) => {
+            console.log(value)
+        })
+
+    </script>
+</body>
+
+</html>

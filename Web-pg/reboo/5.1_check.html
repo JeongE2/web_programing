@@ -23,7 +23,7 @@
         const max = function(array){
             let output = array[0]
             for (const item of array)
-                if ( output > item)
+                if ( output < item)
                     output = item
             return output
         }
@@ -32,7 +32,7 @@
         const max2 = function(...array){
             let output = array[0]
             for (const item of array)
-                if ( output > item)
+                if ( output < item)
                     output = item
             return output
         }

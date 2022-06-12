@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급 함수 실습</title>
+</head>
+<body>
+    <script>
+        //콜백함수: 매개변수로 전달하는 함수
+        function callThreeTimes(callback){
+            for(let i = 0; i<3;i++){
+                callback(i)
+            }
+        }
+        
+        callThreeTimes(function(i){ //익명 함수 사용
+            console.log(`${i}번째 함수 호출`)
+        })
+
+        //콜백 함수 활용 : forEach(), map(), filter()
+        let numbers = [294, 34, 345, 134, 54]
+
+        numbers.forEach(function (value, index, array){
+            console.log(`${index}번째 요소 : ${value}`)
+        })
+
+        let n_numbers = numbers.map(function(value, index, array){
+            return value * value
+        })
+
+        let f_numbers = numbers.filter(function (value) {
+            return value % 2 === 0
+        }) 
+
+        //화살표 함수
+        let array = [0,1,2,3,4,5,6,7,8,9]
+        array.map((value) => value*value)
+
+        array
+            .filter((value) => value%2===0)
+            .map((value) => value*value)
+            .forEach((value) => {
+                console.log(value)
+            }) //메소드 체이닝
+
+    </script>
+
+    <script>
+        //타이머  함수
+        setTimeout(() => {
+            console.log('1초 후에 실행됩니다.')
+        }, 1*1000)
+
+        let id
+        let count = 0
+
+        id = setInterval(() => {
+            console.log(`1초마다 실행됩니다.(${count}번째)`)
+            count++
+        }, 1*1000)
+
+        setTimeout(() => {
+            console.log('타이머를 종료합니다.')
+            clearInterval(id)
+        }, 5*1000)
+
+    </script>
+    <script>
+        //즉시 호출
+        (function(){
+            let pi = 3.141592
+            console.log(pi)
+        })()
+        //엄격모드
+        'use strict'
+        data = 10 //let 없이 사용해도 원래는 문제 없었지만 엄격모드는 안됌
+    </script>
+</body>
+</html>
