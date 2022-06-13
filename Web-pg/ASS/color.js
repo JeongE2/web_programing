@@ -1,4 +1,4 @@
-var text = ['First', 'Second', 'Third', 'Forth', 'Fifth']
+var First_to_Fifth = ['First', 'Second', 'Third', 'Forth', 'Fifth']
 
 var Modify = {
     setColor: function (index, tag, text) {
@@ -27,7 +27,7 @@ var Delete = {
     setText: function (index, tag) {
         var titleORbody = (tag === 'h2') ? 'Title' : 'Body'
         var taglist = document.querySelectorAll(tag);
-        taglist[index].innerText = text[index] + " " + titleORbody;
+        taglist[index].innerText = First_to_Fifth[index] + " " + titleORbody;
     }
 }
 
