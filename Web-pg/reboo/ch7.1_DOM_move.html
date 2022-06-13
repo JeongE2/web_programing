@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>7장 문서객체모델 실습</title>
+    <!--
+    <script> //appendChild
+        document.addEventListener('DOMContentLoaded', () => {
+            const divA = document.querySelector('#first')
+            const divB = document.querySelector('#second')
+            const h1 = document.createElement('h1')
+            h1.textContent = '이동하는 h1 태그'
+
+            const toFirst = () => {
+                divA.appendChild(h1)
+                setTimeout(toSecond,1000)
+            }
+            const toSecond = () => {
+                divB.appendChild(h1)
+                setTimeout(toFirst,1000)
+            }
+        })
+    </script>
+
+    <script> //appendChild
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const h1 = document.querySelector('h1')
+
+                h1.parentNode.removeChild(h1)
+            },3000)
+        })
+    </script>
+-->
+    <script> //EventListener
+        document.addEventListener('DOMContentLoaded', () => {
+            let counter = 0
+            let isConnect = false
+            const h1 = document.querySelector('h1')
+            const p = document.querySelector('p')
+            const connectButton = document.querySelector('#connect')
+            const disconnectButton = document.querySelector('#disconnect')
+
+            const listener = (event) => {
+                h1.textContent = `클릭 횟수: ${counter++}`
+            }
+            
+            connectButton.addEventListener('click',() =>{
+                if ( isConnect == false){
+                    h1.addEventListener('click',listener)
+                    p.textContent = '이벤트 : 연결'
+                    isConnect = true
+                } 
+            })
+
+            disconnectButton.addEventListener('click',() =>{
+                if ( isConnect == true){
+                    h1.removeEventListener('click',listener)
+                    p.textContent = '이벤트 : 해제'
+                    isConnect = false
+                } 
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <!--
+    <div id="first">
+        <h1>첫번째 div</h1>
+    </div>
+    <hr>
+    <div id="second">
+        <h1>두번째 div</h1>
+    </div>
+-->
+    <h1>클릭 횟수: 0</h1>
+    <button id="connect">이벤트 연결</button>
+    <button id="disconnect">이벤트 제거</button>
+    <p>이벤트 : 해제</p>
+</body>
+</html>

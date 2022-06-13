@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> //속성 존재 여부 확인
+        const object = {
+            name: '혼자 공부하는 파이썬',
+            price: 18000,
+            publisher: '한빛미디어'
+        }
+
+        if(object.name !== undefined){
+            console.log('name 속성이 있습니다.')
+        } else{
+            console.log('name 속성이 없습니다.')
+        }
+
+
+        if(object.author){
+            console.log('author 속성이 있습니다.')
+        } else{
+            console.log('author 속성이 없습니다.')
+        }
+
+        object.day || console.log('day 속성이 없습니다.')
+    </script>
+    <script>
+        object.name = object.name !== undefined ? object.name : '제목 미정'
+        object.author = object.author !== undefined ? object.author : '제목 미정'
+
+        console.log(JSON.stringify(object,null,2))
+    </script>
+    <script> //배열 기반의 다중 할당
+        const [a,b,c] = [1,2,3,4,5] //1,2,3이 할당
+
+        //객체 기반의 다중 할당
+        const {name, price} = object
+        console.log(name,price)
+
+        const{d=name, e=price} = object
+        console.log(d,e)
+    </script>
+    <script>//배열 전개 연산자
+        //얕은 복사
+        const 물건_201 = ['우유', '식빵']
+        const 물건_202 = 물건_201
+        물건_202.push('고구마')
+        물건_202.push('토마토')
+        //201과 202를 출력해보면 똑같다.
+
+        //깊은 복사
+        const 물건_203 = [...물건_201]
+        물건_202.push('감자')
+        물건_202.push('마늘')
+
+        const 물건_204 = ['빵',...물건_201,'오렌지',...물건_202]
+    </script>
+    <script>//객체 전개 연산자
+        //얕은 복사
+        const 구름 = {
+            이름 : "구름",
+            나이 : 6,
+            종족: 강아지
+        }
+
+        const 별 = 구름
+        별.이름 = '별'
+        별.나이 = 1
+        console.log(JSON.stringify(구름,null,2))
+
+        //깊은 복사
+        const 하늘 = {...구름}
+        하늘.이름 = '하늘'
+        하늘.나이 = 10
+
+        const 땅 = {
+            ...구름,
+            이름 : '땅',
+            나이 : 12,
+            예방접종 : true
+        }
+
+
+    </script> 
+    <script>//전개 순서에 따라 마지막 값이 달라진다
+        const 사랑 = {
+            이름 : '사랑',
+            나이 : 2,
+            예방접종: true,
+            ...구름
+        }//구름이 뒤에서 전개돼서 이름 나이가 구름 값으로 변경
+
+    </script>
+</body>
+</html>
