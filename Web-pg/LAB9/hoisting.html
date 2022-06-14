@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting(호이스팅)</title>
+    <!--
+        데이터, 변수, 함수등을 호스트 위쪽으로 끌어올려주는것
+        자바스크립터의 인터프리터 엔진이 코드를 수행하기 전에 변수,함수에 대한 메모리 공간을
+        미리 할당 그후에 코드 해석 var는 특이하게 undefined로 초기화
+
+    -->
+    <script>
+        printName('Tom') //함수 선언보다 앞에 있을때? --> 잘동작함
+        //왜냐 호이스팅을 하기 때문에
+        function printName(name){
+            console.log('나의 이름은 '+name+'입니다.')
+        }
+        printName('김유정')//정상적으로 실행됌
+
+
+        const printName = function (name){
+            console.log('나의 이름은 '+name+'입니다.')
+        } //익명 함수인 경우? 호이스팅 안됌 
+
+        console.log(num) //변수도 된다..? 되면 안됌 var 쓰지말자
+        var num; //호이스팅하고 값을 undefined로 초기화, 여기서 수를 할당해도
+        num = 6; //뒤에서 수를 바꿔도 여전히 undefined
+
+        console.log(num2)
+        let num2 = 3;//let으로 하면 에러남, 하지만 호이스팅은 함
+
+        console.log(num3)
+        num3 = 5; //변수 선언을 안하면 호이스팅 안됌
+
+        x = 1 //
+        console.log(x+""+num) //1undefined로 출력
+        var num = 10 
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

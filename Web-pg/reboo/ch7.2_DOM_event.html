@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>7장 문서객체모델 실습</title>
+    <!--
+    <script> //남은 글자 수 출력
+        document.addEventListener('DOMContentLoaded', () => {
+            const textarea = document.querySelector('textarea')
+            const h1 = document.querySelector('h1')
+
+            textarea.addEventListener('keyup', (event) => {
+                const length = textarea.value.length
+                h1.textContent =  `글자 수: ${length}` 
+            })
+        })
+    </script>
+     <script> //키보드 이벤트
+        document.addEventListener('DOMContentLoaded', () => {
+            const h2 = document.querySelector('h2')
+            const print = (event) => {
+                let output = ''
+                output += `alt: ${event.altKey}<br>`
+                output += `ctrl: ${event.ctrlKey}<br>`
+                output += `shift: ${event.shiftKey}<br>`
+                output += `code: ${typeof(event.code) !== 'undefined' ? 
+                    event.code : event.keyCode}<br>`
+                h2.innerHTML = output
+            }
+            document.addEventListener('keydown', print)
+            document.addEventListener('keyup', print)
+        })
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const star = document.querySelector('h3')
+            star.style.position = 'absolute'
+            
+            let[x,y] = [0,0]
+            const block = 20
+            const print = () => {
+                star.style.left = `${x* block}px`
+                star.style.top = `${y* block}px`
+            }
+            print()
+
+            const [left, up, right, down ] = [37,38,39,40]
+            document.body.addEventListener('keydown', (event) => {
+                switch (event.keyCode){
+                    case left:
+                        x -= 1
+                        break
+                    case up:
+                        y -= 1
+                        break
+                    case right:
+                        x += 1
+                        break
+                    case down:
+                        y += 1
+                        break
+                }
+                print()
+            })
+        })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.querySelector('input')
+            const button = document.querySelector('button')
+            const p = document.querySelector('p')
+
+            button.addEventListener('click', () => {
+                const inch = Number(input.value)
+                if (isNaN(inch)) {
+                    p.textContent = '숫자를 입력해 주세요'
+                    return
+                }
+                const cm = inch * 2.54
+                p.textContent = `${cm} cm`
+            })
+        })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.querySelector('input')
+            const p = document.querySelector('p')
+
+            const isEmail = (value) => {
+                return (value.indexOf('@') > 1)
+                    && (value.split('@')[1].indexOf('.') > 1)
+            }
+
+            input.addEventListener('keyup', (event) => {
+                const value = event.currentTarget.value
+                if (isEmail(value)) {
+                    p.style.color = 'green'
+                    p.textContent = `형식입니다: ${value}`
+                } else {
+                    p.style.color = 'red'
+                    p.textContent = `형식 아닙니다: ${value}`
+                }
+                const cm = inch * 2.54
+                p.textContent = `${cm} cm`
+            })
+        })
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const select = document.querySelector('select')
+            const p = document.querySelector('p')
+
+            select.addEventListener('change', (event) => {
+                const options = event.currentTarget.options
+                //const index = event.currentTarget.options.selectedIndex
+                const list = []
+                for (const option of options) {
+                    if (option.selected) {
+                        list.push(option.textContent)
+                    }
+                }
+                p.textContent = `선택: ${list.join(',')}`
+            })
+        })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let 현재값
+            let 변환상수 = 10
+
+            const select = document.querySelector('select')
+            const input = document.querySelector('input')
+            const span = document.querySelector('span')
+
+            const calculate = () => {
+                span.textContent = (현재값 * 변환상수).toFixed(2)
+            }
+
+            select.addEventListener('change', (event) => {
+                const options = event.currentTarget.options
+                const index = event.currentTarget.options.selectedIndex
+                변환상수 = Number(options[index].value)
+                calculate()
+            })
+
+            input.addEventListener('keyup', (event) => {
+                현재값 = Number(event.currentTarget.value)
+                calculate()
+            })
+        })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let [timer, timerId] = [0, 0]
+            const h1 = document.querySelector('h1')
+            const checkbox = document.querySelector('input')
+
+            checkbox.addEventListener('change', (event) => {
+                if (event.currentTarget.checked) {
+                    timerId = setInterval(() => {
+                        timer += 0.1
+                        h1.textContent = `${timer}초`
+                    }, 100)
+                } else {
+                    clearInterval(timerId)
+                }
+            })
+        })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const output = document.querySelector('#output')
+            const radios = document.querySelectorAll('[name=pet]')
+
+            radios.forEach((radio) => {
+                radio.addEventListener('change', (event) => {
+                    const current = event.currentTarget
+                    if (current.checked) {
+                        output.textContent = `좋아 ${current.value}`
+                    }
+                })
+            })
+        })
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const imgs = document.querySelectorAll('img')
+
+           imgs.forEach((img) => {
+                img.addEventListener('contextmenu', (event) => {
+                    event.preventDefault()
+                })
+            })
+        })
+    </script>-->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let status = false
+
+            const checkbox = document.querySelector('input')
+            checkbox.addEventListener('change', (event) => {
+                status = event.currentTarget.checked
+            })
+            const link = document.querySelector('a')
+            link.addEventListener('click', (event) => {
+                if(!status){
+                    event.preventDefault()
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <!--<h1></h1>
+    <textarea></textarea>>
+    <h2>hi</h2
+    <h3>❤</h3>
+    <input type = "text"> inch<br>
+    <button>계산</button>
+    <p></p>
+
+    <input type = "text"><br>
+    <p></p>
+
+    <select multiple>
+        <option>떡볶이</option>
+        <option>순대</option>
+        <option>오뎅</option>
+        <option>튀김</option>
+    </select>
+    <p></p>
+    <input type = "text"> cm =
+    <span></span>
+    <select>
+        <option value="10">mm</option>
+        <option value="0.01">m</option>
+        <option value="0.393701">inch</option>
+    </select>
+
+    <input type="checkbox">
+    <span>타이머 활성화</span>
+    <h1></h1>
+
+    <h3>좋아하는 동물 선택</h3>
+    <input type = "radio" name = "pet" value = "강아지">
+    <span>강아지</span>
+    <input type = "radio" name = "pet" value = "고양이">
+    <span>고양이</span>
+    <input type = "radio" name = "pet" value = "햄스터">
+    <span>햄스터</span>
+    <input type = "radio" name = "pet" value = "기타">
+    <span>기타</span>
+    <hr>
+    <h3 id = "output">hi</h3>
+
+    <img src="http://placekitten.com/300/300" alt="">-->
+
+    <input type="checkbox">
+    <span>링크 활성화</span>
+    <br>
+    <a href="http://hanbit.co.kr">한빛미디어</a>
+</body>
+
+</html>
